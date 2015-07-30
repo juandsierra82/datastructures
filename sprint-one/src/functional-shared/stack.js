@@ -1,24 +1,43 @@
 var Stack = function() {
   // Hey! Rewrite in the new style. Your code will wind up looking very similar,
   // but try not not reference your old code in writing the new style.
-  // var obj = Stack.bind(stackMethods);
-  var obj = {
+  // // var obj = Stack.bind(stackMethods);
+    var stack = {};
+// USE UNDERSCORE EXTEND!!!
 
-storage : {},
-size : 0
-}
+stack.storage = {};
+stack.size = 0;
 
-  obj.push = stackMethods.push;
-  obj.pop = stackMethods.pop;
-  obj.size = stackMethods.size;
+  // var extend = function (object) {
+  //   var len = arguments.length;
+  //   for (var i = 0; i < len; i++) {
+  //     for (var prop in arguments[i]) {
+  //       object[prop] = arguments[i][prop];
+  //     }
+  //   }
+  //   return object;
+  // }
 
 
-return obj;
+
+
+
+// stack.push = stackMethods.push;
+// stack.pop = stackMethods.pop;
+// stack.size = stackMethods.size;
+
+stack = extend(stack, stackMethods);
+
+return stack;
+
+
 
 
 };
 
 var stackMethods =  {
+
+
 
   push : function(value){
     this.storage[this.size] = value;
