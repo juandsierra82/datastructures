@@ -19,23 +19,27 @@ var treeMethods = {};
 treeMethods.addChild = function(value){
   var leaf = Tree(value);
   return this.children.push(leaf);
-
-
 };
 
 treeMethods.contains = function(target){
-   var traverseKids = function (tree){
-     var branches = tree.children;
-   if(branches.length === 0){return false}
-   else{
-     for(var i = 0; i<branches.length; i++){
-       if(branches[i] === target){return true}
-     else{return traverseKids(branches.children[i])}
+   var parent = this;
+   var found = false;
+
+   var traverseKids = function (parent){
+     var branches = parent.children;
+     for(var i = 0; i< branches.length; i++){
+       if(branches[i].value === target){
+         found = true;
+       } else {
+         traverseKids(branches[i])
+       }
    }
    }
+   traverseKids(parent);
+return found;
  }
- traverseKids(leaf);
-}
+
+
 
 
 
