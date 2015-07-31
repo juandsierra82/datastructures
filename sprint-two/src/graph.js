@@ -1,23 +1,21 @@
 
 
 var Graph = function(){
-var graph = {};
+  var index = 0;
+  var newGraph = {};
 };
 
 Graph.prototype.addNode = function(node){
-   var newNode = {};
-   newNode.node = node;
-   newNode.edge = [];
-
-   var
 
 
-};
+
+   // debugger;
+
+}
 
 Graph.prototype.contains = function(node){
-  if(_.contains(Graph, node)){return true}
-};
 
+}
 Graph.prototype.removeNode = function(node){
 };
 
@@ -25,6 +23,15 @@ Graph.prototype.hasEdge = function(fromNode, toNode){
 };
 
 Graph.prototype.addEdge = function(fromNode, toNode){
+
+   this.edge = [];
+   if(this.edge.length < 2) {
+   this.edge.push(node);
+   }
+   else{
+    this.index = this.edge;
+    index++;
+   }
 };
 
 Graph.prototype.removeEdge = function(fromNode, toNode){
