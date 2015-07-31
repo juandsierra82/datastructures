@@ -1,12 +1,21 @@
 
 
 var Graph = function(){
+var graph = {};
 };
 
 Graph.prototype.addNode = function(node){
+   var newNode = {};
+   newNode.node = node;
+   newNode.edge = [];
+
+   var
+
+
 };
 
 Graph.prototype.contains = function(node){
+  if(_.contains(Graph, node)){return true}
 };
 
 Graph.prototype.removeNode = function(node){
