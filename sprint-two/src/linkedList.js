@@ -14,15 +14,12 @@ var LinkedList = function(){
       list.tail.next = newNode;
       list.tail = newNode;
     }
-    console.log(list)
   };
 
   list.removeHead = function(){
     // list.head.next = null;
     var removed = list.head;
     list.head = removed.next;
-    console.log(removed);
-    console.log(list);
     return removed.value;
   };
 
