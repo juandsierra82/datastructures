@@ -40,6 +40,11 @@ Graph.prototype.removeEdge = function(fromNode, toNode){
       this.nodes[fromNode].splice(i, 1);
     }
   }
+  for(var j = 0; j <this.nodes[toNode].length; j++) {
+    if (this.nodes[toNode][j] === fromNode) {
+      this.nodes[toNode].splice(j, 1);
+    }
+  }
 };
 
 Graph.prototype.forEachNode = function(cb){
